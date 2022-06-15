@@ -3,19 +3,8 @@
 #include "matrixfunctions.h"
 #include "string.h"
 
-static void print_double_matrix(double** matrix, int rows, int cols) {
-    for (int i = 0; i < rows; i++) {
-        double *row = *(matrix + i);
-        for (int j = 0; j < cols; j++) {
-            printf("%4.2lf", *(row + j));
-        }
-        printf("\n");
-    }
-}
-
 
 int main(void) {
-    setvbuf(stdout, NULL, _IONBF, 0); // DEBUG
     double *constants = malloc(2 * sizeof(double));
     double **coefficients = malloc(2 * sizeof(double*));
 

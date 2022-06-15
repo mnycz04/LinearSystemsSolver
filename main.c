@@ -40,6 +40,11 @@ int main(void) {
 
         double *solution = get_dot_product(inverse, constants);
         printf("%lf, %lf\n\n", *solution, *(solution + 1));
+
+        for (int i = 0; i < 2; i++) {
+            free(*(inverse + i));
+        }
+        free(inverse);
         free(solution);
     }
     exit_program:
